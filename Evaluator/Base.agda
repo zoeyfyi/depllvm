@@ -91,7 +91,7 @@ eval-body fuel m m' (exit (brc x l₁ l₂ l₁∈ l₂∈)) =
 
 eval-phi : Model ⟦_⟧ Γ → l ⦂ blk B Γᵉ Γ ∈ Δ → Phi l Δ A → ⟦ A ⟧
 eval-phi m s (_ ↦ l [ l∈Γᵉ , l⦂B∈Γ ], p) = lookup m l⦂B∈Γ
-eval-phi m s (skip _ [ x ], p) = {!   !}
+eval-phi m s (skip _ [ l∉Γᵉ ], p) = {!   !}
 eval-phi m (n x) (_ ↦ l [ x₁ , x₂ ], p) = eval-phi m x p
 eval-phi m (n x) (skip _ [ x₁ ], p) = eval-phi m x p
 

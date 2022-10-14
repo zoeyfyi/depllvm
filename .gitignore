@@ -1,3 +1,4 @@
 **/*.agdai
 **/*.o
 **/*.hi
+.DS_Store

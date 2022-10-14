@@ -14,6 +14,7 @@ open import Cubical.HITs.ListedFiniteSet
 open import Cubical.HITs.PropositionalTruncation renaming (rec to prec)
 open import Cubical.Data.Empty renaming (rec to ⊥-elim)
 
+
 data Typ : Type where
   int : Typ
   bool : Typ
@@ -21,3 +22,4 @@ data Typ : Type where
 ⟦_⟧ : Typ → Type
 ⟦ int ⟧ = ℤ
 ⟦ bool ⟧ = Bool
+

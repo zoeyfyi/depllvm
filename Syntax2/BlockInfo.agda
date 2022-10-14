@@ -1,6 +1,6 @@
 {-# OPTIONS --cubical #-}
 
-module Syntax.BlockContext where
+module Syntax2.BlockInfo where
 
 open import Cubical.Foundations.Prelude
 open import Cubical.Foundations.Structure
@@ -14,19 +14,15 @@ open import Cubical.HITs.ListedFiniteSet
 open import Cubical.HITs.PropositionalTruncation renaming (rec to prec)
 open import Cubical.Data.Empty renaming (rec to ⊥-elim)
 
-open import Syntax.Type
-open import Syntax.Context
+open import Syntax2.Type
+open import Syntax2.Context
 
-record BlockContext : Type where
+record BlockInfo : Type where
   constructor blk
   field
     btyp : Typ
-    bedges : Context Unit
     bctx : Context Typ
+    -- bpost : Context Unit
 
-open BlockContext public
+open BlockInfo public
 
--- PredBlockContext : String → Type
--- PredBlockContext l = Context (Σ[ ctx ∈ BlockContext ] (l ⦂ tt ∈ ctx .bedges))
-
--- postulate filterBlockContext : (l : String) → BlockContext → PredBlockContext l
